@@ -1,348 +1,428 @@
-<!-- /index.html (or whichever page this is) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Latimore Life & Legacy LLC - Independent insurance consultant serving Pennsylvania families with life insurance, annuities, and legacy planning. #TheBeatGoesOn - Protecting Today. Securing Tomorrow."
-  />
-  <meta
-    name="keywords"
-    content="life insurance Pennsylvania, annuities, legacy planning, Schuylkill County, Luzerne County, Northumberland County, key person insurance"
-  />
-  <title>Latimore Life & Legacy - Protecting Pennsylvania Families | #TheBeatGoesOn</title>
-  <link rel="stylesheet" href="./styles.css" />
-</head>
+// app/page.tsx
+import Link from "next/link";
 
-<body>
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="./index.html" class="logo" aria-label="Latimore Life & Legacy Home">
-        <!-- FIX: repo has ./logo.png (NOT latimore-logo.png) -->
-        <img
-          src="./logo.png"
-          alt="Latimore Life & Legacy LLC - Protecting Today. Securing Tomorrow. #TheBeatGoesOn"
-          class="logo-image"
-          loading="eager"
-        />
-      </a>
+export default function HomePage() {
+  return (
+    <main>
+      <Header />
 
-      <button
-        class="mobile-menu-btn"
-        type="button"
-        aria-label="Toggle navigation menu"
-        aria-controls="navLinks"
-        aria-expanded="false"
-      >
-        Menu
-      </button>
+      {/* Hero */}
+      <section className="mx-auto max-w-6xl px-4 pb-10 pt-12 sm:pt-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Financial Protection Built for Real Families
+            </h1>
+            <p className="mt-4 text-base text-neutral-600 sm:text-lg">
+              Life insurance, retirement planning, and legacy strategies serving
+              Schuylkill County and families across Pennsylvania.
+            </p>
 
-      <ul class="nav-links" id="navLinks" role="menubar">
-        <li role="none"><a role="menuitem" href="./index.html">Home</a></li>
-        <li role="none"><a role="menuitem" href="./about.html">About</a></li>
-        <li role="none"><a role="menuitem" href="./products.html">Products</a></li>
-        <li role="none"><a role="menuitem" href="./services.html">Services</a></li>
-        <li role="none"><a role="menuitem" href="./contact.html">Contact</a></li>
-        <li role="none">
-          <a
-            role="menuitem"
-            href="https://globalfinancialimpact.fillout.com/t/tMz7ZcqpaZus"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary-small"
-          >Book Consultation</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <PrimaryButton href="/start">Start My Protection Plan</PrimaryButton>
+              <SecondaryButton href="/contact">Book a Consultation</SecondaryButton>
+            </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>Protecting What Matters Most to <span class="gold-text">Pennsylvania Families</span></h1>
+            <div className="mt-8 grid grid-cols-2 gap-3 text-sm text-neutral-700 sm:grid-cols-4">
+              <Badge>Licensed &amp; Compliant</Badge>
+              <Badge>Independent Guidance</Badge>
+              <Badge>Serving Pennsylvania</Badge>
+              <Badge>Personalized Plans</Badge>
+            </div>
+          </div>
 
-          <p class="hero-tagline">#TheBeatGoesOn - Protecting Today. Securing Tomorrow.</p>
+          {/* Visual / Card */}
+          <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <p className="text-sm font-medium text-neutral-900">
+              Start with clarity.
+            </p>
+            <p className="mt-2 text-sm text-neutral-600">
+              Use the assessment to identify coverage gaps, priorities, and next
+              best steps—then we tailor a plan around your family’s goals.
+            </p>
 
-          <p class="hero-subtitle">
-            Independent insurance consultant serving Schuylkill, Luzerne &amp; Northumberland Counties with life insurance,
-            annuities, and financial protection strategies.
+            <div className="mt-6 rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                Typical outcomes
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+                <li>• Coverage aligned to income + responsibilities</li>
+                <li>• Mortgage + debt protection options</li>
+                <li>• Retirement income strategy roadmap</li>
+                <li>• Legacy considerations for your family</li>
+              </ul>
+            </div>
+
+            <div className="mt-6">
+              <PrimaryButton href="/start" full>
+                Start the Assessment
+              </PrimaryButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder / Why */}
+      <section className="border-t border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+            <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                Why protection planning matters
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+                Prepare before life forces the conversation.
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-neutral-700">
+                Latimore Life &amp; Legacy was founded on one simple truth: life
+                can change in an instant. After surviving sudden cardiac arrest,
+                founder Jackson Latimore understood firsthand how fragile
+                financial security can be.
+              </p>
+              <p className="mt-3 text-sm leading-6 text-neutral-700">
+                We help families build clear, practical protection strategies
+                that create stability today—and strength for the future.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                What you get
+              </p>
+              <ul className="mt-4 space-y-3 text-sm text-neutral-700">
+                <li>
+                  <span className="font-medium text-neutral-900">
+                    A plan you can understand:
+                  </span>{" "}
+                  clear options, clear tradeoffs, clear next steps.
+                </li>
+                <li>
+                  <span className="font-medium text-neutral-900">
+                    Coverage built around your life:
+                  </span>{" "}
+                  not generic quotes—aligned to goals and responsibilities.
+                </li>
+                <li>
+                  <span className="font-medium text-neutral-900">
+                    A long-term strategy:
+                  </span>{" "}
+                  protection, growth, and legacy working together.
+                </li>
+              </ul>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <SecondaryButton href="/services" full>
+                  Explore Services
+                </SecondaryButton>
+                <PrimaryButton href="/contact" full>
+                  Talk to Us
+                </PrimaryButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services grid */}
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+              Services
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+              Protection. Growth. Legacy.
+            </h2>
+          </div>
+          <Link
+            href="/services"
+            className="hidden text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 sm:block"
+          >
+            View all services
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ServiceCard
+            title="Life Insurance"
+            desc="Income protection, final expense, and permanent solutions tailored to your goals."
+            href="/services/life-insurance"
+          />
+          <ServiceCard
+            title="Mortgage Protection"
+            desc="Help keep your home secure for your family if the unexpected happens."
+            href="/services/mortgage-protection"
+          />
+          <ServiceCard
+            title="Retirement Income Planning"
+            desc="Strategies to help turn savings into reliable income."
+            href="/services/retirement-income"
+          />
+          <ServiceCard
+            title="Wealth Accumulation"
+            desc="Long-term growth strategies aligned with risk tolerance and objectives."
+            href="/services/wealth-accumulation"
+          />
+          <ServiceCard
+            title="Business Strategies"
+            desc="Protection and planning solutions for business owners."
+            href="/services/business-strategies"
+          />
+          <ServiceCard
+            title="Estate & Legacy Planning"
+            desc="Help your family transfer wealth efficiently and responsibly."
+            href="/services/estate-legacy"
+          />
+        </div>
+
+        <div className="mt-6 sm:hidden">
+          <SecondaryButton href="/services" full>
+            View all services
+          </SecondaryButton>
+        </div>
+      </section>
+
+      {/* Local section */}
+      <section className="border-t border-neutral-200 bg-neutral-50">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neutral-700">
+                Local commitment
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+                Rooted in Schuylkill County. Serving Pennsylvania.
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-neutral-700">
+                We proudly serve families across Schuylkill County and throughout
+                Pennsylvania—building protection plans that reflect real lives
+                and real priorities.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <p className="text-sm font-medium text-neutral-900">Service areas</p>
+              <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-neutral-700">
+                <span>Pottsville</span>
+                <span>Tamaqua</span>
+                <span>Shenandoah</span>
+                <span>Frackville</span>
+                <span>Schuylkill County</span>
+                <span>Pennsylvania</span>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <PrimaryButton href="/start" full>
+                  Start Assessment
+                </PrimaryButton>
+                <SecondaryButton href="/contact" full>
+                  Book Appointment
+                </SecondaryButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="mx-auto max-w-6xl px-4 py-12">
+        <div className="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Start building your family’s financial protection plan.
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-neutral-700">
+            The right strategy doesn’t happen by accident. It happens by design.
           </p>
 
-          <div class="credentials">
-            <div class="badge">PA Licensed (DOI #1268820)</div>
-            <div class="badge">MBA Candidate</div>
-            <div class="badge">3 Counties Served</div>
-          </div>
-
-          <div class="cta-buttons">
-            <a
-              href="https://globalfinancialimpact.fillout.com/t/tMz7ZcqpaZus"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary"
-            >Book Free Consultation</a>
-            <a
-              href="https://agents.ethoslife.com/invite/29ad1"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-             data-track-name="quote_form_open" data-track-label="instant_quote" data-track-name="quote_form_open" data-track-label="home_hero_quote">Get Instant Quote</a>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <PrimaryButton href="/start">Start My Assessment</PrimaryButton>
+            <SecondaryButton href="/contact">Schedule a Call</SecondaryButton>
           </div>
         </div>
+      </section>
 
-        <div class="hero-image">
-          <!-- OK: repo has ./jackson-headshot.jpg -->
-          <img
-            src="./jackson-headshot.jpg"
-            alt="Jackson M. Latimore Sr., Founder and CEO"
-            class="profile-photo"
-            loading="eager"
-          />
-          <div class="profile-card">
-            <h2>Jackson M. Latimore Sr.</h2>
-            <p class="title">CEO &amp; Founder</p>
-            <p class="subtitle">Independent Financial Consultant</p>
-          </div>
+      <Footer />
+    </main>
+  );
+}
+
+/* ----------------------------- components ----------------------------- */
+
+function Header() {
+  return (
+    <header className="border-b border-neutral-200 bg-white">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <Link href="/" className="text-sm font-semibold tracking-tight">
+          Latimore Life &amp; Legacy
+        </Link>
+        <nav className="hidden items-center gap-6 sm:flex">
+          <NavLink href="/services">Services</NavLink>
+          <NavLink href="/why-protection-matters">Why It Matters</NavLink>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/resources">Resources</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
+        </nav>
+        <div className="flex items-center gap-2">
+          <SecondaryButton href="/contact" className="hidden sm:inline-flex">
+            Book
+          </SecondaryButton>
+          <PrimaryButton href="/start">Start</PrimaryButton>
         </div>
       </div>
-    </section>
+    </header>
+  );
+}
 
-    <!-- Why Choose Section -->
-    <section class="why-choose">
-      <div class="container">
-        <h2 class="section-title">Why Choose Latimore Life &amp; Legacy</h2>
-        <div class="features-grid">
-          <div class="feature">
-            <div class="feature-icon-text">LOCAL EXPERTISE</div>
-            <h3>Local Expertise</h3>
-            <p>
-              Deep understanding of Pennsylvania families and the unique challenges facing post-industrial communities in
-              Schuylkill, Luzerne, and Northumberland Counties
+function Footer() {
+  return (
+    <footer className="border-t border-neutral-200 bg-white">
+      <div className="mx-auto max-w-6xl px-4 py-10">
+        <div className="grid gap-8 sm:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold text-neutral-900">
+              Latimore Life &amp; Legacy LLC
+            </p>
+            <p className="mt-2 text-sm text-neutral-700">
+              Serving Schuylkill County &amp; Pennsylvania
+            </p>
+            <p className="mt-4 text-xs text-neutral-600">
+              Insurance products offered through licensed professionals. Not
+              affiliated with or endorsed by any government agency.
             </p>
           </div>
-          <div class="feature">
-            <div class="feature-icon-text">EDUCATION</div>
-            <h3>Education-Focused</h3>
-            <p>MBA candidate, MPA, BA Political Science - bringing academic rigor and practical wisdom to financial planning</p>
+
+          <div className="sm:text-right">
+            <div className="flex flex-col gap-2 sm:items-end">
+              <Link
+                href="/contact"
+                className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+              >
+                Contact
+              </Link>
+              <Link
+                href="/start"
+                className="text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900"
+              >
+                Start Assessment
+              </Link>
+              {/* Replace with your details */}
+              <p className="pt-2 text-sm text-neutral-700">
+                Phone: <span className="font-medium">[Your Number]</span>
+              </p>
+              <p className="text-sm text-neutral-700">
+                Email: <span className="font-medium">[Your Email]</span>
+              </p>
+            </div>
           </div>
-          <div class="feature">
-            <div class="feature-icon-text">INDEPENDENT</div>
-            <h3>Independent Advisor</h3>
-            <p>Multiple carrier appointments mean I find the best solution for YOU, not what pays me most - true fiduciary-minded service</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon-text">EXPERIENCE</div>
-            <h3>Real Experience</h3>
-            <p>Former Social Security paralegal, home health aide, and youth coach - I understand vulnerability and the importance of preparedness</p>
-          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-4 text-xs text-neutral-600">
+          <Link href="/privacy" className="underline underline-offset-4">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="underline underline-offset-4">
+            Terms
+          </Link>
         </div>
       </div>
-    </section>
+    </footer>
+  );
+}
 
-    <!-- Services Overview -->
-    <section class="services">
-      <div class="container">
-        <h2 class="section-title">Protection Strategies for Every Stage of Life</h2>
-        <p class="section-subtitle">
-          Whether you're building your family, approaching retirement, or leading an organization - we have solutions designed for your unique needs
-        </p>
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="text-sm text-neutral-700 hover:text-neutral-900"
+    >
+      {children}
+    </Link>
+  );
+}
 
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon-text">FAMILIES</div>
-            <h3>For Young Families</h3>
-            <p><strong>Your Challenge:</strong> Balancing today's expenses while protecting your family's future if something happens to you.</p>
-            <p><strong>Our Solution:</strong> Affordable term life insurance that replaces your income, pays off the mortgage, and ensures your children's education is funded.</p>
-            <a href="./products.html#life-insurance" class="card-link">Explore Family Protection</a>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-text">RETIREMENT</div>
-            <h3>For Pre-Retirees</h3>
-            <p><strong>Your Fear:</strong> Outliving your money or watching one health event unravel decades of planning.</p>
-            <p><strong>Our Solution:</strong> Fixed and indexed annuities that guarantee lifetime income and protect your nest egg from market losses.</p>
-            <a href="./products.html#annuities" class="card-link">Secure Your Retirement</a>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-text">BUSINESS</div>
-            <h3>For School Districts</h3>
-            <p><strong>Your Risk:</strong> Operational chaos and community mistrust if your superintendent or business manager dies suddenly.</p>
-            <p><strong>Our Solution:</strong> Key person insurance that protects against leadership loss and demonstrates fiscal responsibility to stakeholders.</p>
-            <a href="./services.html#business" class="card-link">Protect Your District</a>
-          </div>
-
-          <div class="service-card">
-            <div class="service-icon-text">LEGACY</div>
-            <h3>Estate Planning Support</h3>
-            <p><strong>Your Goal:</strong> Pass wealth to the next generation without tax burdens or family conflict.</p>
-            <p><strong>Our Solution:</strong> Life insurance strategies that provide estate liquidity, cover taxes, and create a lasting legacy.</p>
-            <a href="./services.html#estate" class="card-link">Build Your Legacy</a>
-          </div>
-        </div>
-
-        <div class="cta-center">
-          <a href="./products.html" class="btn btn-primary">View All Products</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Founder Story Section with Personal Photos -->
-    <section class="story">
-      <div class="container">
-        <h2 class="section-title-center">Why Protection Matters: A Personal Lesson in Preparedness</h2>
-        <h3 class="story-date">December 7, 2010 - East Stroudsburg University</h3>
-
-        <div class="story-photos">
-          <div class="story-photo-container">
-            <!-- FIX: repo has assets/about/hospital.jpg (NOT jackson-hospital-recovery.jpg) -->
-            <img
-              src="./assets/about/hospital.jpg"
-              alt="Jackson Latimore recovering in hospital after cardiac arrest, December 2010"
-              loading="lazy"
-            />
-            <p class="photo-caption">In recovery after cardiac arrest - December 2010</p>
-          </div>
-
-          <div class="story-photo-container">
-            <!-- FIX: repo shows assets/about/team.jpg exists; use it instead of missing esu-trainers-aed.jpg -->
-            <img
-              src="./assets/about/team.jpg"
-              alt="ESU athletic trainers with the AED defibrillator that saved Jackson's life"
-              loading="lazy"
-            />
-            <p class="photo-caption">The trainers and technology that saved my life</p>
-          </div>
-        </div>
-
-        <div class="story-text-centered">
-          <p class="story-intro">
-            During a college basketball game, my heart stopped. I was 22 years old. I survived because athletic trainers and EMTs had immediate access
-            to an Automated External Defibrillator (AED) — a device that was there thanks to the Gregory W. Moyer Defibrillator Fund.
-          </p>
-
-          <p>
-            Greg Moyer was a 15-year-old Notre Dame basketball player who died of sudden cardiac arrest in 2000. His family didn't let tragedy be the end
-            of his story. They created a nonprofit that placed AEDs in schools and public buildings throughout Monroe County, including East Stroudsburg University.
-          </p>
-
-          <p class="story-highlight"><strong>Their preparation saved my life. That lesson shapes everything I do today.</strong></p>
-
-          <p>
-            Financial protection isn't about selling policies — it's about ensuring families and organizations have what they need when the unexpected happens.
-            Just as that AED was ready when seconds mattered, life insurance and legacy planning ensure your family is protected when it matters most.
-          </p>
-
-          <p>
-            Today, I'm a first-generation college graduate with a Master of Public Administration, a Bachelor's in Political Science, and I'm completing my MBA.
-            I'm a father to Jackson Jr., Corinne, and Jaclyn. I coach youth sports and serve families in the same Pennsylvania counties where I grew up.
-          </p>
-
-          <p class="story-closing"><strong>Latimore Life &amp; Legacy exists to help families and organizations prepare — because preparedness is everything.</strong></p>
-
-          <div class="cta-buttons">
-            <a href="./about.html" class="btn btn-secondary" data-track-name="quote_form_open" data-track-label="instant_quote">Read Full Bio</a>
-            <a href="./contact.html" class="btn btn-primary">Work With Me</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <h2>Ready to Plan Your Legacy?</h2>
-        <p class="cta-subtext">
-          #TheBeatGoesOn - Protecting today. Securing tomorrow. Let's discuss your protection strategy — no pressure, no obligation.
-        </p>
-        <div class="cta-buttons">
-          <a
-            href="https://globalfinancialimpact.fillout.com/t/tMz7ZcqpaZus"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >Book Free Consultation</a>
-          <a href="tel:8568951457" class="btn btn-secondary" data-track-name="quote_form_open" data-track-label="instant_quote">Call (856) 895-1457</a>
-          <a
-            href="https://agents.ethoslife.com/invite/29ad1"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-           data-track-name="quote_form_open" data-track-label="instant_quote" data-track-name="quote_form_open" data-track-label="home_hero_quote">Get Instant Quote</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Latimore Life &amp; Legacy LLC</h4>
-          <p class="footer-tagline">#TheBeatGoesOn - Protecting Today. Securing Tomorrow.</p>
-          <p>Protection-first strategies for working families, pre-retirees, and local organizations across Central Pennsylvania.</p>
-          <div class="social-links">
-            <a href="https://www.instagram.com/jacksonlatimore.global" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-            <a href="https://www.linkedin.com/in/startwithjacksongfi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="./about.html">About Jackson</a>
-          <a href="./products.html">Products</a>
-          <a href="./services.html">Services</a>
-          <a href="./education.html">Financial Education</a>
-          <a href="./contact.html">Contact</a>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p><strong>Phone:</strong> <a href="tel:8568951457">(856) 895-1457</a></p>
-          <p>
-            <strong>Email:</strong>
-            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d070c0e061e02035c5455542d010c190400021f0801080a0c0e14430e0200">[email&#160;protected]</a>
-          </p>
-          <p><strong>Service Area:</strong> Schuylkill, Luzerne &amp; Northumberland Counties, PA</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Get Started</h4>
-          <a href="https://globalfinancialimpact.fillout.com/t/tMz7ZcqpaZus" target="_blank" rel="noopener noreferrer" class="footer-cta">Book Consultation</a>
-          <a href="https://agents.ethoslife.com/invite/29ad1" target="_blank" rel="noopener noreferrer" class="footer-cta">Instant Quote</a>
-          <a href="https://hihello.me/p/1ac94c21-813c-48c0-a270-49f5b2cc31e7" target="_blank" rel="noopener noreferrer" class="footer-cta">Save My Contact</a>
-
-          <button type="button" class="footer-cta export-analytics" data-export-analytics>Export Activity</button>
-          <div class="qr-code-container">
-            <!-- If this still breaks, confirm the file exists and matches case exactly. -->
-            <img src="./QRCode.png" alt="QR Code - Quick contact for Latimore Life & Legacy" class="qr-code" loading="lazy" />
-            <p class="qr-caption">Scan for Quick Contact</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="disclosure">
-          Licensed in Pennsylvania (DOI #1268820, NIPR #21638507). Independent contractor affiliated with Global Financial Impact. Products offered through
-          appointed carriers including North American Company, F&amp;G, American Equity, Ethos Life, and American General Life. For educational purposes only;
-          not tax or legal advice. Product availability and terms vary by carrier and underwriting. Insurance guarantees are backed by the financial strength and
-          claims-paying ability of the issuing insurance company.
-        </p>
-        <p>&copy; 2026 Latimore Life &amp; Legacy LLC. All rights reserved. | #TheBeatGoesOn</p>
-      </div>
+function Badge({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="rounded-full border border-neutral-200 bg-white px-3 py-2 text-center">
+      {children}
     </div>
-  </footer>
+  );
+}
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+function ServiceCard({
+  title,
+  desc,
+  href,
+}: {
+  title: string;
+  desc: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+    >
+      <p className="text-base font-semibold tracking-tight text-neutral-900">
+        {title}
+      </p>
+      <p className="mt-2 text-sm leading-6 text-neutral-700">{desc}</p>
+      <p className="mt-4 text-sm font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-4 group-hover:decoration-neutral-900">
+        Learn more
+      </p>
+    </Link>
+  );
+}
 
-  <script src="./js/config.js" defer></script>
-  <script src="./js/analytics.js" defer></script>
-  <script src="./js/main.js" defer></script>
-</body>
-</html>
+function PrimaryButton({
+  href,
+  children,
+  full,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  full?: boolean;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={[
+        "inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold",
+        "bg-neutral-900 text-white hover:bg-neutral-800",
+        "border border-neutral-900",
+        full ? "w-full" : "",
+        className,
+      ].join(" ")}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function SecondaryButton({
+  href,
+  children,
+  full,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  full?: boolean;
+  className?: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className={[
+        "inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-semibold",
+        "bg-white text-neutral-900 hover:bg-neutral-50",
+        "border border-neutral-300",
+        full ? "w-full" : "",
+        className,
+      ].join(" ")}
+    >
+      {children}
+    </Link>
+  );
+}
